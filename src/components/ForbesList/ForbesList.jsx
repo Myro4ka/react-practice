@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { ForbesListItem } from 'components';
 import {
   BoardHeader,
@@ -33,4 +34,16 @@ export const ForbesList = ({ list }) => {
       </LeaderBoardProfiles>
     </LeaderBoard>
   );
+};
+
+ForbesList.propTypes = {
+  list: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      avatar: PropTypes.string,
+      capital: PropTypes.number,
+      isIncrease: PropTypes.bool,
+    }),
+  ),
 };

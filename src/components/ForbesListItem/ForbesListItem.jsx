@@ -1,6 +1,7 @@
 import { BiDollarCircle } from 'react-icons/bi';
 import { FcBullish, FcBearish } from 'react-icons/fc';
 import { ForbesItem, Avatar, Name, Capital } from './ForbesListItem.styled';
+import PropTypes from 'prop-types';
 
 import { theme } from 'styles/theme';
 
@@ -15,4 +16,11 @@ export const ForbesListItem = ({ avatar, capital, name, isIncrease }) => {
       </Capital>
     </ForbesItem>
   );
+};
+
+ForbesListItem.propTypes = {
+  name: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  capital: PropTypes.number.isRequired,
+  isIncrease: PropTypes.bool.isRequired,
 };

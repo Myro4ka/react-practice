@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { StatisticItem } from 'components';
 import { StatisticsList, StatisticTitle } from './Statistics.styled';
 import { FaRegThumbsUp } from 'react-icons/fa';
@@ -24,4 +25,15 @@ export const Statistics = ({ stats, title }) => {
       </StatisticsList>
     </>
   );
+};
+
+Statistics.propTypes = {
+  stats: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string,
+      title: PropTypes.string,
+      total: PropTypes.number,
+    }),
+  ),
+  title: PropTypes.string,
 };

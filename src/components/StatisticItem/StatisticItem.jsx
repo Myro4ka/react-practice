@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   StatisticBox,
   StatisticText,
@@ -12,4 +13,13 @@ export const StatisticItem = ({ title, total, children }) => {
       <StatisticText>{title}</StatisticText>
     </StatisticBox>
   );
+};
+
+StatisticItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  total: PropTypes.number.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node),
+  ]).isRequired,
 };

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   Card,
   CardBody,
@@ -44,4 +45,14 @@ export const BlogCard = ({
       </CardFooter>
     </Card>
   );
+};
+
+BlogCard.propTypes = {
+  poster: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  avatar: PropTypes.string,
+  postedAt: PropTypes.string,
 };
